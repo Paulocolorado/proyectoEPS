@@ -1,0 +1,532 @@
+ body{
+        font-family: 'News Cycle', sans-serif;
+        font-family: 'Roboto', sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+
+
+.sub-title {
+    color: rgb(200, 77, 81)
+}
+
+.boton {
+    background: #fff;
+    border: 0px solid transparent;
+    padding: 2%;
+    margin-top: 4%;
+}
+
+.content-secudary-img {
+    width: 100%;
+}
+
+.sub-title-two {
+    color: #fff;
+}
+
+.box {
+    display: flex;
+    padding-top: 3rem;
+    background-color: #ededed;
+    padding-bottom: 2rem;
+   
+
+  }
+.box .ContenedorOne{
+    flex:3;
+    background-color:#EDEDED;
+    padding-top: 4rem;
+    }  
+    .box .ContenedorTwo{
+        flex:6;
+        background-color: #EDEDED;
+       
+
+    }  
+    .box .Contenedor-padre-doctores{
+        display:flex;
+    }
+    .box .Contenedor-Doctores{
+        flex:13;
+        margin: 2%;
+    }
+    .box .boton-Doctores h3{        
+        background-color: #FF6D58;
+        width: max-content;
+        padding: 0.3rem 0.5rem;
+        margin: auto;
+        color: white;
+        font-size: 17px;
+        font-weight: 400;        
+    }
+   
+    .box .texto-contenedor-doctores{        
+        padding: 0rem 2rem 1rem 4rem;
+        text-align: justify;
+        color: #000000ad;
+    }
+    .box .ContenedorOne > h2{
+        padding-left: 4rem;
+        color:#005d93;
+    }
+
+
+
+    .box h2 span{
+        font-weight: 300;
+    }
+
+    .box img{
+        width: 100%;
+        height: 200px;
+    }
+
+
+        .navbar ul{
+        display: flex;
+        margin-left: auto;
+        margin-right: 12rem;
+    }
+
+    .navbar ul li{
+        list-style: none;
+        padding: 0.3rem 1.2rem;
+    }
+
+    .navbar{
+        display: flex;
+        align-items: center;
+        position: fixed;
+        background-color: #ffffff2e;
+        width: 100vw;
+        z-index: 999;
+        top:0;
+        transition: all 1s;
+    }
+
+    .navbar ul li a{
+        color: white;
+        text-decoration: none;
+        font-weight: 600;
+    }
+
+    .navbar button{
+        border: none;
+        background-color: red;
+        color: white;
+        padding: 0.3rem 0.5rem;
+        margin-right: 4rem;
+
+    }
+
+
+    .home{
+        /*height: 100vh;*/
+        background-image: url(../images/doctors-patient.jpg);
+        /*background-size: cover;*/
+        position: relative;
+        background-position: 36% 69%;
+    }
+
+    .home::before{
+        content: " ";
+        width: 100%;
+        height: 100%;
+        background-color: #0000001c;
+        position: absolute;
+        bottom: 0;
+
+    }
+
+   
+
+    .text-center p.bc-red{
+        background-color: #EC3939;
+        width: max-content;
+        padding: 0.3rem 0.5rem;
+        color: white;
+        margin-bottom: 0;
+        font-size: 1.3rem;
+    }
+
+    .text-center p.text-second{
+        font-size: 2.7rem;
+        font-weight: 300;
+        margin: 0;
+    }
+
+    .text-center p.text-second span{
+        font-weight: 500;
+    }
+
+    .text-center button{
+        background-color: white;
+        border: none;
+        margin-left: 10rem;
+        margin-top: 2rem;
+        padding: 0.3rem 0.5rem;
+        font-size: 1.3rem;
+        transition: background-color 1s;
+    }
+    .text-center button:hover{
+        background-color: red;
+        color: white;
+    }
+
+    .text-center{
+        padding-left: 11rem;
+        position: relative;
+    }
+
+    .container-banner{
+        display: flex;
+        margin-top: 8rem;
+        color: white;
+        position: absolute;
+        bottom: 0;
+        width: 98.7vw;
+    }
+
+    .container-banner::before{
+        content: " ";
+        width: 100%;
+        height: 100%;
+        bottom: 0;
+        background-color: #0000003b;
+        position: absolute;
+    }
+
+    .container-banner div {
+        flex: 3;
+        background-color: #76D7C43d;
+        text-align: center;
+        position: relative;
+    }   
+
+    .container-banner div p:first-child{
+        text-align: center;
+        font-weight: 600;
+    }
+
+    .container-banner div p:first-child span{
+        font-weight: 300;
+    }
+
+    .form-header input, .form-header select{
+        width: 90%;
+        margin: 0.3rem 0;
+        height: 1.5rem;
+    }
+
+    .display-flex{
+        display: flex;
+    }
+
+    .form-header .display-flex div{
+        flex: 2;
+    }
+
+    .form-header form{
+        padding: 0 0.5rem;
+    }
+
+
+.container-banner .container-four{
+        background-color: #76D7C4;
+}
+
+.container-banner .form-header{
+        background-color: #76D7C4ab;
+}
+
+.container-banner .container-two{
+        background-color: #76D7C475;
+}
+
+.navbar .logo{
+    text-decoration: none;
+    color: black;
+    padding-left: 2rem;
+    font-size: 2rem;
+}
+
+.navbar .logo span{
+    color: red;
+}
+
+
+
+/*.footer{
+    display: flex;
+    align-items: center;
+    background-color: aquamarine;
+    height: 3%;
+}
+
+.footer ul{
+    display: flex;
+    margin-left: auto;
+    margin-right: 4rem;
+}
+
+.footer ul li{
+    list-style: none;
+    padding: 0.3rem 0.5rem;
+}
+
+.footer ul li a{
+    color: black;
+    text-decoration: none;
+    font-weight: 600;
+}*/
+
+.features{
+    display: flex;
+    text-align: center;
+}
+
+.features div{
+    flex: 2;
+    padding: 2rem;
+}
+
+.features div img{
+    width: 37%;
+}
+
+.features div h3 span{
+    font-weight: 400;
+}
+
+.features div h3{
+    margin: 0;
+    color: #ec3939;
+}
+
+.features div p{
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-top: 0.5rem;
+}
+
+.deparments {
+    display: flex;
+    padding: 2rem 4rem;
+    background-color: #005d93;
+    margin-top: 2rem;
+    padding-bottom: 0;
+}
+
+.deparments div{
+    flex: 4;
+    
+}
+
+.deparments ul{
+    list-style: none;
+    padding: 0;
+}
+
+.deparments ul li{
+    font-size: 0.85rem;   
+    border-bottom: 1px solid gray;
+    padding: 0.1rem 0;
+    padding-left: 1.5rem;
+
+}
+
+.deparments .areas{
+    flex: 2;
+    background-color: white;
+    padding: 0 1rem;
+    margin-bottom: 2rem;
+}
+
+
+.deparments .areas h3{
+    color: #005d93;
+}
+
+.deparments .second-section{
+    padding-left: 5rem;
+    color: white;
+}
+
+.deparments h3 span {
+    font-weight: 300;
+}
+
+.deparments .second-section button{
+    background-color: white;
+    border: none;
+    margin-top: 2rem;
+    padding: 0.3rem 0.5rem;
+    font-size: 1.1rem;
+    transition: background-color 1s;
+}
+
+.deparments .second-section button:hover{
+    background-color: #ec3939;
+    color: white;
+}
+
+.deparments .second-section p{
+    width: 80%;
+}
+
+
+.deparments .third-section {
+    position: relative;
+}
+
+
+.deparments .third-section img{
+    position: absolute;
+    bottom: 0;
+    width: 50%;
+    left: 5rem;
+}
+
+.benefit{
+    display: flex;
+    padding: 3rem 5rem;
+    justify-content: center;
+    color: white;
+}
+
+.benefit div{
+    width: 20%;
+    padding: 1rem 2rem;
+}
+
+.benefit div h2 span{
+    font-weight: 300;
+}
+
+
+.benefit .container-one {
+    background-color: #005d93a3;
+}
+
+.benefit .container-second{
+    background-color: #ec3939b8;
+    margin: 0 0.2rem;
+}
+
+.benefit .container-third{
+    background-color: #76d7c4;
+}
+
+.benefit div p{
+    font-weight: 300;
+    text-align: justify;
+}
+
+.testimonios{
+    text-align: center;
+}
+
+.testimonios div{
+    display: flex;
+    justify-content: center;
+}
+
+.testimonios p{
+    text-align: center;
+    padding: 0 2rem;
+    font-size: 1.2rem;
+    margin-top: 0;
+}
+
+.testimonios div p{
+    font-weight: 600;
+    margin-bottom: 0;
+    margin-top: 0.5rem;
+}
+
+.ourBlog .container{
+    display: flex;
+    padding: 1rem 5rem;
+    justify-content: center;
+}
+
+.ourBlog h2{
+    text-align: center;
+}
+
+.ourBlog .container div{
+    text-align: center;
+    width: 40%;
+    margin: 0 1.5rem;
+    background-color: white;
+}
+
+.ourBlog .container div img{
+    width: 100%;
+}
+
+.ourBlog .container div p{
+    text-align: left;
+    width: 80%;
+    margin: auto;
+    margin-bottom: 2rem;
+    color: #000000a1;
+}
+
+.ourBlog .container div a{
+    text-decoration: none;
+    color: white;
+    background-color: #ec3939;
+    padding: 0.4rem 1.2rem;
+}
+
+
+.ourBlog{
+    background-color: #ededed;
+    padding: 1.5rem 0;
+}
+
+.ourBlog .container div h3, .ourBlog h2{
+    color: #005d93;
+}
+
+.ourBlog h2 span{
+    font-weight: 300;
+}
+
+.footer div img{
+    width: 30px;
+    padding-right: 1rem;
+}  
+
+.footer div a{
+    text-decoration: none;    
+    color: white;
+}
+
+.footer {
+    background-color: #005d93;
+    color: white;
+    display: flex;
+    padding: 2rem 0;
+}
+
+.footer div{
+    flex: 3;
+    padding-left: 6rem;
+}
+
+.footer div h4{
+    font-size: 1.2rem;
+}
+
+.mySlides {
+    display:none;
+    height: 100vh;
+}
+
+.w3-content {
+    height: 100vh;
+}
