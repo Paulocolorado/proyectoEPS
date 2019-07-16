@@ -5,9 +5,21 @@ const bcrypt = require('bcrypt-nodejs'); // para cifrar la contraseña
 
 const userSchema = new mongoose.Schema({
     local: {
+        userAdmin: Boolean,
+        userDoctor: Boolean,
+        userPatiente: Boolean,
         email: String,
         password: String,
-        nombre: String
+        nombre: String,
+        lastName: String,
+        id: Number,
+        numContact: Number,
+        mail: String,
+        especiality: String,
+        birthDate: Date,
+        address: String,
+        sex: String ,
+        consulMotivation: String
     },
 
 });
