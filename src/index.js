@@ -27,7 +27,6 @@ mongoose.connect(url,{
 require('./config/passport')(passport);
 
 
-
 //settings
 app.set('port', process.env.PORT || 3000 );
 app.set('views', path.join(__dirname,'views')); // las vistas estaran en una carpeta llamadas views
@@ -36,15 +35,15 @@ app.set('view engine', 'ejs'); //motor de plantillas
 //middelwares
 app.use(morgan('dev'));
 app.use(cookieParser());
-app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.urlencoded({extended: false}));//al estar en false solo procesa datos no imagenes
 app.use(session({
-    secret: 'mediO',
+    secret: 'mediO',//palabra secreta
     resave: false,
     saveUninitialized: false
 }));
 app.use(passport.initialize());
 app.use(passport.session());
-app.use(flash());
+app.use(flash());//pasa información entre urls
 
 //routes
 require('./server/routes')(app, passport);
