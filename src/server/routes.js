@@ -1,5 +1,31 @@
 module.exports = (app, passport) => {
 
+        // historia clinica
+    app.get('/clinicalHist', (req, res) => {
+        res.render('clinicalHist', {
+            user: req.user
+        });
+    });
+
+    app.post('/clinicalHist', passport.authenticate('local-clinicalHist', {
+        successRedirect: '/clinicalHist',
+        failureRedirect: '/profile',
+        failureFlash: true
+    }));
+
+            // Nueva historia clinica
+    app.get('/newClinicalHist', (req, res) => {
+        res.render('newClinicalHist', {
+            user: req.user
+        });
+    });
+    
+    app.post('/newClinicalHist', passport.authenticate('local-newClinicalHist', {
+        successRedirect: '/newClinicalHist',
+        failureRedirect: '/profile',
+        failureFlash: true
+    }));
+
     app.get('/', (req, res) => {
         res.render('index')
     });

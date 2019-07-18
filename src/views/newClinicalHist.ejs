@@ -1,0 +1,66 @@
+<DOCTYPE html>
+        <html>
+            <head>
+                <meta charset="utf-8">
+                    <title>Nueva historia Clinica</title>
+                    <% include partials/head.ejs %>
+        
+            </head>
+            <body class="newClinicalHist">
+               <div>
+                   <h1>
+                        Nueva historia Clinica
+                   </h1>
+                   <form action="/signup" method="post">
+                       <div>
+                           <label for="name">Nombre</label>
+                           <input type="name" name="name">
+                       </div>
+                       <div>
+                           <label for="lastName">Apellidos</label>
+                           <input type="lastName" name="lastName">
+                       </div>
+                        <div>
+                           <label for="idNumber">Identificación</label>
+                           <input type="idNumber" name="idNumber">
+                       </div>
+                       <div>
+                            <label for="email">Email</label>
+                            <input type="email" name="email">
+                        </div>
+                        <div>
+                            <label for="birthDate">fecha de nacimiento</label>
+                            <input type="date" name="birthDate">
+                        </div>
+                         <div>
+                            <label for="address">Dirección</label>
+                            <input type="address" name="address">
+                        </div>
+                        <div>
+                            <label for="sex">Sexo</label>
+                            <input type="sex" name="sex">
+                        </div>
+                    </div>
+                    <div>
+                        <label for="consulMotivation">Motivo de la consulta</label>
+                        <input type="consulMotivation" name="consulMotivation">
+                    </div>
+                    <div>
+                        <label for="password">Password</label>
+                        <input type="password" name="password">
+                    </div>
+                       <input type="submit">
+                   </form>
+                    <!--  Errores  -->
+                   <div>
+        
+                   </div>
+        
+                   <div>
+                        <p> Or go <a href="/">Home</a></p>
+                   </div>
+               </div>
+        
+        
+            </body>
+        </html>

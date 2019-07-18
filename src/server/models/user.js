@@ -15,10 +15,11 @@ const userSchema = new mongoose.Schema({
         idNumber: Number,
         numContact: Number,
         especiality: String,
-        birthDate: Date,
+        birthDate: String,
         address: String,
         sex: String ,
-        consulMotivation: String
+        consulMotivation: String,
+        status: Boolean
     },
 
 });

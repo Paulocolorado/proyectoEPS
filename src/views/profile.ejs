@@ -9,14 +9,30 @@
 </head>
 <body>
 <div>
+
+    <h1>Clinical history</h1>
+    <p><a href="/clinicalHist">Clinical history</a></p>
+    <p>
+
     <h1>profile</h1>
     <p><a href="/logout">Logout</a></p>
     <p>
         <strong>id</strong>: <%= user._id %> <br>
         <strong>email</strong>: <%= user.local.email %><br>
-        <strong>password</strong>: <%= user.local.password %>
+        <strong>password</strong>: <%= user.local.password %><br>
         <strong>LastName</strong>: <%= user.local.lastName %>
     </p>
+    <div>
+            <p>
+                <a href="/clinicalHist">Historia Clinica</a>
+            </p>
+       </div>
+
+       <div>
+            <p>
+                <a href="/newClinicalHist">Crear nueva Historia Clinica</a>
+            </p>
+       </div>
 </div>
 </body>
 </html>

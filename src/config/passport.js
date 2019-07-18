@@ -36,6 +36,17 @@ module.exports = function (passport) {
                     newUser.local.email = email;
                     newUser.local.password = newUser.generateHash(password);
                     newUser.local.lastName = req.body.lastName;
+                    newUser.local.userAdmin = req.body.userAdmin;
+                    newUser.local.userDoctor = req.body.userDoctor;
+                    newUser.local.userPatiente = req.body.userPatiente;
+                    newUser.local.name = req.body.name;
+                    newUser.local.idNumber = req.body.idNumber;
+                    newUser.local.numContact = req.body.numContact;
+                    newUser.local.especiality = req.body.especiality;
+                    newUser.local.birthDate = req.body.birthDate;
+                    newUser.local.address = req.body.address;
+                    newUser.local.sex = req.body.sex;
+                    newUser.local.consulMotivation = req.body.consulMotivation;
                     newUser.save(function (err) {
                         if (err) {
                             throw err;
@@ -69,5 +80,6 @@ module.exports = function (passport) {
                 return done(null, user);
             });
         }));
+
+        
 }
-// branchMail

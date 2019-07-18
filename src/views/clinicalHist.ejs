@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- <% include partials/head%> -->
+</head>
+<body>
+<div>
+    <h1>Historia Clinica</h1>
+    <p><a href="/logout">Logout</a></p>
+    <p>
+        <strong>id</strong>: <%= user._id %> <br>
+        <strong>email</strong>: <%= user.local.email %><br>
+        <strong>password</strong>: <%= user.local.password %><br>
+        <strong>name</strong>: <%= user.local.name %><br>
+        <strong>lastName</strong>: <%= user._lastName %> <br>
+        <strong>idNumber</strong>: <%= user.local.idNumber %><br>
+        <strong>numContact</strong>: <%= user.local.numContact %><br>
+        <strong>birthDate</strong>: <%= user.local.birthDate %><br>
+        <strong>id</strong>: <%= user._id %> <br>
+        <strong>address</strong>: <%= user.local.address %><br>
+        <strong>sex</strong>: <%= user.local.sex %><br>
+        <strong>consulMotivation</strong>: <%= user.local.consulMotivation %> <br>
+    </p>
+</div>
+</body>
+</html>
