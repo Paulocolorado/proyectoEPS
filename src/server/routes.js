@@ -1,5 +1,7 @@
 module.exports = (app, passport) => {
 
+    const User = require('../server/models/user');
+
         // historia clinica
     app.get('/clinicalHist', (req, res) => {
         res.render('clinicalHist', {
@@ -25,6 +27,23 @@ module.exports = (app, passport) => {
         failureRedirect: '/profile',
         failureFlash: true
     }));
+
+
+    app.get('/listUser', (req, res) => {
+        User.find().exec(function(err, usuarios) {
+            if (err) throw err;
+            console.log(JSON.stringify(usuarios));
+            myvariable = JSON.parse(JSON.stringify(usuarios));
+        });
+        res.render('listUser')
+    });
+
+
+    // app.post('/listUser', passport.authenticate('local-listUser', {
+    //     successRedirect: '/listUser',
+    //     failureRedirect: '/profile',
+    //     failureFlash: true
+    // }));
 
     app.get('/', (req, res) => {
         res.render('index')
