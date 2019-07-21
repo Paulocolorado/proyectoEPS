@@ -1,12 +1,35 @@
-<!DOCTYPE html>
-<html lang="en">
+<DOCTYPE html>
+        <html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <% include partials/head.ejs %>
 </head>
 <body>
+        <!-- <form action="/add" method="post">
+            <% for (var i=0; i< myvariable.length; i++) { %>
+                <tr>
+                    <td><strong>
+                        nombre:
+                    </strong> </td>
+                    <%= myvariable[i].local.name%> 
+                    <td></td><strong>
+                        id: 
+                    </strong></td>
+                    <td>
+                        <%= myvariable[i].local.idNumber%>
+                        <a href="/delete/<%= myvariable[i]._id%>">Borrar</a>
+                        
+                        <a href="/edit/<%= myvariable[i].local %>">Editar</a>
+                        <button>Editar</button>
+                        <br>
+                    </td>
+                </tr> 
+            <%}%>
+
+        </form> -->
     <% for (var i=0; i< myvariable.length; i++) { %>
         <strong>
             nombre:
@@ -15,9 +38,12 @@
         <strong>
              id: 
         </strong>
+
         <%= myvariable[i].local.idNumber%>
+        <a href="/delete/<%= myvariable[i]._id%>">Borrar</a>
+        
+        <a href="/edit/<%= myvariable[i] %>">Editar</a>
         <button>Editar</button>
-        <button>Borrar</button>
         <br>
         
     <%}%>

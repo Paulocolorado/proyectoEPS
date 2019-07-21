@@ -3,7 +3,7 @@
             <head>
                 <meta charset="utf-8">
                     <title>Nueva historia Clinica</title>
-                    <% include partials/head.ejs %>
+                   
         
             </head>
             <body class="newClinicalHist">
@@ -16,10 +16,10 @@
                             <label for="userAdmin">userAdmin</label><input type="checkbox" name="userAdmin" value="true">
                         </div>
                         <div>
-                            <label for="userDoctor">userDoctor</label><input type="checkbox" name="userDoctor" value="true">
+                            <label for="userDoctor">userDoctor</label><input type="radio" name="userPatiente" value="false" required>
                         </div>
                         <div>
-                            <label for="userPatiente">userPatiente</label><input type="checkbox" name="userPatiente" value="true">
+                            <label for="userPatiente">userPatiente</label><input type="radio" name="userPatiente" value="true">
                         </div>
                        <div>
                            <label for="name">Nombre</label>
@@ -45,12 +45,13 @@
                             <label for="address">Dirección</label>
                             <input type="text" name="address">
                         </div>
-                        <div>
+                        <form >
                             <input type="radio" name="sex" value="male"> Hombre<br>
                             <input type="radio" name="sex" value="female"> Mujer<br>
                             <input type="radio" name="sex" value="other"> Otro
-                        </div>
-                    
+                        </form>
+
+                    </div>
                     <div>
                         <label for="consulMotivation">Motivo de la consulta</label>
                         <input type="text" name="consulMotivation">
@@ -65,19 +66,15 @@
                        <input type="submit" >
                    </form>
                     <!--  Errores  -->
-                    <div>
-                        <% if(message.length > 0) { %>
-                            <div>
-                                <%= message %>
-                            </div>
-                        <% }  %>
-            
-                    </div>
-                    <!-- Fin Errores-->
+                   <div>
+        
+                   </div>
         
                    <div>
                         <p> Or go <a href="/">Home</a></p>
                    </div>
-               </div>       
+               </div>
+
+        
             </body>
         </html>

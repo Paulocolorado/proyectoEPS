@@ -19,7 +19,13 @@ const userSchema = new mongoose.Schema({
         address: String,
         sex: String ,
         consulMotivation: String,
-        status: Boolean
+        status: Boolean,
+        vitalSign: String,
+        pulse: String,
+        presion: String,
+        generalExam: String,
+        humanHeight: String,
+        laboratoryResults: String,
     },
 
 });

@@ -21,8 +21,7 @@ const session = require('express-session');
 const { url } = require('./config/database');
 
 //conectarmnos a la base de datos
-mongoose.connect(url,{
-});
+mongoose.connect('mongodb://localhost/nodelogin', {useNewUrlParser: true});
 
 require('./config/passport')(passport);
 

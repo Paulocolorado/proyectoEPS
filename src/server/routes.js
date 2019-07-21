@@ -16,34 +16,38 @@ module.exports = (app, passport) => {
     }));
 
             // Nueva historia clinica
-    app.get('/newClinicalHist', (req, res) => {
+    app.get('/newClinicalHist', (req, res) => { 
         res.render('newClinicalHist', {
-            user: req.user
+            message: req.flash('loginMessage'),
+            user: new User(req.user)
         });
     });
-    
+  
     app.post('/newClinicalHist', passport.authenticate('local-newClinicalHist', {
         successRedirect: '/newClinicalHist',
-        failureRedirect: '/profile',
+        failureRedirect: '/profile/',
         failureFlash: true
     }));
 
-
-    app.get('/listUser', (req, res) => {
+    app.get('/listUser',  (req, res) => {
         User.find().exec(function(err, usuarios) {
             if (err) throw err;
-            console.log(JSON.stringify(usuarios));
             myvariable = JSON.parse(JSON.stringify(usuarios));
         });
         res.render('listUser')
     });
 
+    app.get('/delete/:id', async (req, res, next) => {
+        let { id } = req.params;
+        await User.deleteOne({_id: id});
+        res.redirect('/profile');
+      });
 
-    // app.post('/listUser', passport.authenticate('local-listUser', {
-    //     successRedirect: '/listUser',
-    //     failureRedirect: '/profile',
-    //     failureFlash: true
-    // }));
+    app.get('/edit/:id', (req, res, next) => {
+        res.render('edit', {
+            output: JSON.parse(JSON.stringify(req.params))
+        });
+    });
 
     app.get('/', (req, res) => {
         res.render('index')
@@ -54,7 +58,6 @@ module.exports = (app, passport) => {
             message: req.flash('loginMessage')
         });
     });
-
 
     app.post('/login', passport.authenticate('local-login', {
         successRedirect: '/profile',
@@ -74,8 +77,11 @@ module.exports = (app, passport) => {
 		failureFlash: true // allow flash messages
 	}));
 
-    //profile view
     app.get('/profile', isLoggedIn, (req, res) => {
+        User.find().exec(function(err, usuarios) {
+            if (err) throw err;
+            myvariable = JSON.parse(JSON.stringify(usuarios));
+        });
         res.render('profile', {
             user: req.user
         });

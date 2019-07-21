@@ -9,8 +9,10 @@
 </head>
 <body>
 <div>
-
-    <h1>listar usuarios</h1>
+<!--Administrador-->
+    <% if (user.local.userAdmin) {%>
+        <h1>Administrador</h1>
+        <h1>listar usuarios</h1>
     <p><a href="/listUser">Listar Usuarios</a></p>
     <p>
 
@@ -24,7 +26,9 @@
         <strong>id</strong>: <%= user._id %> <br>
         <strong>email</strong>: <%= user.local.email %><br>
         <strong>password</strong>: <%= user.local.password %><br>
-        <strong>LastName</strong>: <%= user.local.lastName %>
+        <strong>LastName</strong>: <%= user.local.lastName %><br>
+        <strong>userDoctor</strong>: <%= user.local.userDoctor %><br>
+        <strong>UserAdmin</strong>: <%= user.local.userAdmin %>
     </p>
     <div>
             <p>
@@ -38,5 +42,76 @@
             </p>
        </div>
 </div>
+
+
+    <%}%>
+<!--Fin Administrador--> 
+
+
+<!--Doctor-->
+    <% if (user.local.userDoctor) {%>
+        <h1>Doctor</h1>
+        <h1>listar usuarios</h1>
+    <p><a href="/listUser">Listar Usuarios</a></p>
+    <p>
+
+
+    <h1>profile</h1>
+    <p><a href="/logout">Logout</a></p>
+    <p>
+        <strong>id</strong>: <%= user._id %> <br>
+        <strong>email</strong>: <%= user.local.email %><br>
+        <strong>password</strong>: <%= user.local.password %><br>
+        <strong>LastName</strong>: <%= user.local.lastName %>
+        <strong>LastName</strong>: <%= user.local.userAdmin %>
+    </p>
+    <div>
+            <p>
+                <a href="/clinicalHist">Historia Clinica</a>
+            </p>
+       </div>
+
+       <div>
+            <p>
+                <a href="/newClinicalHist">Crear nueva Historia Clinica</a>
+            </p>
+       </div>
+</div>
+
+
+    <%}%>
+<!--Fin Doctor-->
+
+<!--Paciente-->
+    <% if (user.local.userPatiente) {%>
+        <h1>userPatiente</h1>
+  
+
+    <h1>Clinical history</h1>
+    <p><a href="/clinicalHist">Clinical history</a></p>
+    <p>
+
+    <h1>profile</h1>
+    <p><a href="/logout">Logout</a></p>
+    <p>
+        <strong>id</strong>: <%= user._id %> <br>
+        <strong>email</strong>: <%= user.local.email %><br>
+        <strong>password</strong>: <%= user.local.password %><br>
+        <strong>LastName</strong>: <%= user.local.lastName %><br>
+        <strong>userAdmin</strong>: <%= user.local.userAdmin %><br>
+        <strong>LastName</strong>: <%= user.local.userAdmin %>
+    </p>
+    <div>
+            <p>
+                <a href="/clinicalHist">Historia Clinica</a>
+            </p>
+       </div>
+</div>
+ 
+
+    <%}%>
+
+<!--Paciente-->    
+
 </body>
 </html>
