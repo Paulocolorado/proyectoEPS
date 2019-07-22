@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- <% include partials/head%> -->
+</head>
+<body>
+<div>
+    <h1>Historia Clinica</h1>
+    <p><a href="/logout">Logout</a></p>
+
+    <form action="/editPatiente/<%=note._id%>?_method=PUT" method="POST">
+        <input type="hidden" name="_method" value="PUT">
+        <label for="name">Nombre</label><input type="text" name="name" placeholder="name" value="<%= note.local.name %>">
+        <label for="idNumber">Número de identificación</label><textarea name="idNumber"><%= note.local.idNumber%></textarea></br>
+        <label for="lastName">Apellido</label><input type="text" name="lastName" placeholder="lastName" value="<%= note.local.lastName %>"></br>
+        <label for="address">Dirección</label><textarea name="address"><%= note.local.address%></textarea></br>
+        <label for="userPatiente">Acepta terminos y condiciones</label><input type="checkbox" name="userPatiente" value="true" required>
+
+        <button type="submit">Guardar</button>
+    </form>
+    
+    
+</div>
+</body>
+</html>

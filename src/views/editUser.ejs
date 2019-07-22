@@ -9,13 +9,15 @@
 </head>
 <body>
 <div>
-    <h1>Historia Clinica</h1>
+    <h1>Editar Usuario</h1>
     <p><a href="/logout">Logout</a></p>
 
     <form action="/editUser/<%=note._id%>?_method=PUT" method="POST">
         <input type="hidden" name="_method" value="PUT">
         <input type="text" name="name" placeholder="name" value="<%= note.local.name %>">
         <textarea name="idNumber"><%= note.local.idNumber%></textarea>
+        <input type="text" name="lastName" placeholder="lastName" value="<%= note.local.lastName %>">
+        <textarea name="address"><%= note.local.address%></textarea>
         <button type="submit">Guardar</button>
     </form>
     

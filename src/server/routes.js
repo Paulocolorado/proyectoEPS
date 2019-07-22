@@ -37,25 +37,19 @@ module.exports = (app, passport) => {
         res.render('listUser')
     });
 
+    app.get('/listPatiente',  (req, res) => {
+        User.find().exec(function(err, usuarios) {
+            if (err) throw err;
+            myvariable = JSON.parse(JSON.stringify(usuarios));
+        });
+        res.render('listPatiente')
+    });
+
     app.get('/delete/:id', async (req, res, next) => {
         let { id } = req.params;
         await User.deleteOne({_id: id});
         res.redirect('/profile');
       });
-
-    // app.get('/edit/:id', (req, res, next) => {
-    //     res.render('edit', {
-    //         output: JSON.parse(JSON.stringify(req.params))
-    //     });
-    // });
-
-    // app.get('/edit/:id', async (req, res, next) => {
-    //     let { id } = req.params;
-    //     const usuario = await User.find();
-    //     console.log(usuario);
-    //     console.log(req.params);
-    //     res.render('edit', { usuario });
-    // });
 
     app.get('/edit/:id', async(req, res) => {
         const note = await User.findById(req.params.id);
@@ -64,10 +58,21 @@ module.exports = (app, passport) => {
     });
 
     app.put('/editUser/:id', async(req, res) =>{
-        console.log("hi" +req.params.id);
-        const { name, idNumber }=req.body;
-        await User.findByIdAndUpdate(req.params.id,{local:{name, idNumber}});
+        const { name, idNumber, userDoctor , userPatiente, email, password, lastName, numContact, birthDate, address, sex, consulMotivation, status, vitalSign, pulse, presion, generalExam, humanHeight, laboratoryResults }=req.body;
+        await User.findByIdAndUpdate(req.params.id,{local:{name, idNumber, userDoctor , userPatiente, email, password, lastName, numContact, birthDate, address, sex, consulMotivation, status, vitalSign, pulse, presion, generalExam, humanHeight, laboratoryResults }});
         res.redirect('/listUser');
+    })
+
+    app.get('/editPatiente/:id', async(req, res) => {
+        const note = await User.findById(req.params.id);
+        res.render('editPatiente', {note});
+        console.log(note);
+    });
+
+    app.put('/editPatiente/:id', async(req, res) =>{
+        const { name, idNumber, userDoctor , userPatiente, email, password, lastName, numContact, birthDate, address, sex, consulMotivation, status, vitalSign, pulse, presion, generalExam, humanHeight, laboratoryResults }=req.body;
+        await User.findByIdAndUpdate(req.params.id,{local:{name, idNumber, userDoctor , userPatiente, email, password, lastName, numContact, birthDate, address, sex, consulMotivation, status, vitalSign, pulse, presion, generalExam, humanHeight, laboratoryResults }});
+        res.redirect('/listPatiente');
     })
 
     app.get('/', (req, res) => {

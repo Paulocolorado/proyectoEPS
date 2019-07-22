@@ -1,0 +1,32 @@
+<DOCTYPE html>
+    <html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Document</title>
+<% include partials/head.ejs %>
+</head>
+<body>
+    <a href="/listPatiente/"> Actualizar los registros</a></br></br>
+   
+<% for (var i=0; i< myvariable.length; i++) { %>
+    <% if ( myvariable[i].local.userPatiente) {%>
+
+        <strong>
+            nombre:
+        </strong> 
+        <%= myvariable[i].local.name%> 
+        <strong>
+                id: 
+        </strong>
+
+        <%= myvariable[i].local.idNumber%>
+        <a href="/editPatiente/<%= myvariable[i]._id %>">Editar</a>
+        <a href="/delete/<%= myvariable[i]._id%>">Borrar</a>
+        <br>
+        <%}%>
+    
+<%}%>
+</body>
+</html>
