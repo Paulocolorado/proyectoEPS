@@ -12,7 +12,7 @@
     <h1>Historia Clinica</h1>
     <p><a href="/logout">Logout</a></p>
 
-    <form action="/edit-user/<%=note._id%>?_method=PUT" method="POST">
+    <form action="/editUser/<%=note._id%>?_method=PUT" method="POST">
         <input type="hidden" name="_method" value="PUT">
         <input type="text" name="email" placeholder="email" value="<%= note.local.email %>">
         <textarea name="idNumber"><%= note.local.idNumber%></textarea>

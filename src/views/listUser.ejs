@@ -8,57 +8,7 @@
     <% include partials/head.ejs %>
 </head>
 <body>
-        <!-- <form action="/add" method="post">
-            <% for (var i=0; i< myvariable.length; i++) { %>
-                <tr>
-                    <td><strong>
-                        nombre:
-                    </strong> </td>
-                    <%= myvariable[i].local.name%> 
-                    <td></td><strong>
-                        id: 
-                    </strong></td>
-                    <td>
-                        <%= myvariable[i].local.idNumber%>
-                        <a href="/delete/<%= myvariable[i]._id%>">Borrar</a>
-                        
-                        <a href="/edit/<%= myvariable[i].local %>">Editar</a>
-                        <button>Editar</button>
-                        <br>
-                    </td>
-                </tr> 
-            <%}%>
-
-        </form> -->
-
-        <!-- <% for (var i=0; i< myvariable.length; i++) { %>
-            <form action="/edit" method="post">
-            <strong>
-                nombre:
-            <td>
-                </strong><input type="text" placeholder="<%= myvariable[i].local.name%>" value="<%= myvariable[i].local.name%>"><%= myvariable[i].local.name%><strong>
-            </td>
-                 id: 
-            </strong>
-            <td>
-                </strong><input type="text" placeholder="<%= myvariable[i].local.idNumber%>>" value="<%= myvariable[i].local.idNumber%>"><%= myvariable[i].local.name%><strong>
-            </td>
-           
-            <a href="/edit/<%= myvariable[i] %>">Editar</a>
-            <button type="submit">
-                Editando
-            </button>
-    
-            </form>
-            <a href="/delete/<%= myvariable[i]._id%>">Borrar</a>
-            
-            
-            <button>Editar</button>
-            <br>
-            
-        <%}%> -->
-
-        
+       <a href="/listUser"> Actualizar los registros</a></br></br>
     <% for (var i=0; i< myvariable.length; i++) { %>
         <strong>
             nombre:

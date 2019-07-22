@@ -59,11 +59,16 @@ module.exports = (app, passport) => {
 
     app.get('/edit/:id', async(req, res) => {
         const note = await User.findById(req.params.id);
-        res.render('edit', {note});
+        res.render('editUser', {note});
         console.log(note);
     });
 
-    // app.
+    app.put('/editUser/:id', async(req, res) =>{
+        console.log("hi" +req.params.id);
+        const { name, idNumber }=req.body;
+        await User.findByIdAndUpdate(req.params.id,{local:{name, idNumber}});
+        res.redirect('/listUser');
+    })
 
     app.get('/', (req, res) => {
         res.render('index')
