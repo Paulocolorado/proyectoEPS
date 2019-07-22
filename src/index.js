@@ -16,6 +16,7 @@ const morgan = require('morgan');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const session = require('express-session');
+const methodOverride = require('method-override');
 
 //base de datos
 const { url } = require('./config/database');
@@ -43,6 +44,7 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(flash());//pasa información entre urls
+app.use(methodOverride('_method'));
 
 //routes
 require('./server/routes')(app, passport);

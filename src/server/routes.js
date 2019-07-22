@@ -43,11 +43,27 @@ module.exports = (app, passport) => {
         res.redirect('/profile');
       });
 
-    app.get('/edit/:id', (req, res, next) => {
-        res.render('edit', {
-            output: JSON.parse(JSON.stringify(req.params))
-        });
+    // app.get('/edit/:id', (req, res, next) => {
+    //     res.render('edit', {
+    //         output: JSON.parse(JSON.stringify(req.params))
+    //     });
+    // });
+
+    // app.get('/edit/:id', async (req, res, next) => {
+    //     let { id } = req.params;
+    //     const usuario = await User.find();
+    //     console.log(usuario);
+    //     console.log(req.params);
+    //     res.render('edit', { usuario });
+    // });
+
+    app.get('/edit/:id', async(req, res) => {
+        const note = await User.findById(req.params.id);
+        res.render('edit', {note});
+        console.log(note);
     });
+
+    // app.
 
     app.get('/', (req, res) => {
         res.render('index')

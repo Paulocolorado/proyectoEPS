@@ -11,11 +11,13 @@
 <div>
     <h1>Historia Clinica</h1>
     <p><a href="/logout">Logout</a></p>
-    <p>
-        <strong>id</strong>: <%= output.id %> <br>
-        <strong>id</strong>: <%= output.email %> <br>
 
-    </p>
+    <form action="/edit-user/<%=note._id%>?_method=PUT" method="POST">
+        <input type="hidden" name="_method" value="PUT">
+        <input type="text" name="email" placeholder="email" value="<%= note.local.email %>">
+        <textarea name="idNumber"><%= note.local.idNumber%></textarea>
+    </form>
+    <button type="submit">Guardar</button>
 </div>
 </body>
 </html>

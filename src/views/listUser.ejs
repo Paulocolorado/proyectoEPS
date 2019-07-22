@@ -30,6 +30,35 @@
             <%}%>
 
         </form> -->
+
+        <!-- <% for (var i=0; i< myvariable.length; i++) { %>
+            <form action="/edit" method="post">
+            <strong>
+                nombre:
+            <td>
+                </strong><input type="text" placeholder="<%= myvariable[i].local.name%>" value="<%= myvariable[i].local.name%>"><%= myvariable[i].local.name%><strong>
+            </td>
+                 id: 
+            </strong>
+            <td>
+                </strong><input type="text" placeholder="<%= myvariable[i].local.idNumber%>>" value="<%= myvariable[i].local.idNumber%>"><%= myvariable[i].local.name%><strong>
+            </td>
+           
+            <a href="/edit/<%= myvariable[i] %>">Editar</a>
+            <button type="submit">
+                Editando
+            </button>
+    
+            </form>
+            <a href="/delete/<%= myvariable[i]._id%>">Borrar</a>
+            
+            
+            <button>Editar</button>
+            <br>
+            
+        <%}%> -->
+
+        
     <% for (var i=0; i< myvariable.length; i++) { %>
         <strong>
             nombre:
@@ -40,9 +69,10 @@
         </strong>
 
         <%= myvariable[i].local.idNumber%>
+        <a href="/edit/<%= myvariable[i]._id %>">Editar</a>
         <a href="/delete/<%= myvariable[i]._id%>">Borrar</a>
         
-        <a href="/edit/<%= myvariable[i] %>">Editar</a>
+        
         <button>Editar</button>
         <br>
         
