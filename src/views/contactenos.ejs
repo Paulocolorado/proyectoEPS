@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Contactenos MEDIO - Medicina Ortodoxa</title>
+
+    <link rel="stylesheet" href="css/w3.css">
+    <link rel="icon" type="image/png" sizes="96x96" href="images/favicon/favicon-96x96.png">
+
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/swiper.min.css">
+</head>
+
+<body style="position: relative;">
+    <div class="home sedes">
+        <div class="navbar sedes">
+            <a href="#" class="logo"><img src="images/res1.png" alt=""></a>
+            <ul>
+                <li><a href="#">HOME</a></li>
+                <li><a href="#">SEDES</a></li>
+                <li><a href="#">SALUD</a></li>
+                <li><a href="#">BLOG</a></li>
+                <li><a href="#">CONTÁCTENOS</a></li>
+            </ul>          
+
+            <button onclick='window.location.href = "/login"' ;>Iniciar Sesión</button>          
+        </div>
+    </div>
+    <div class="container-title-sedes">
+        <h1>Si deseas tener una atención personalizada, ESCRIBENOS</h1>
+    </div>
+
+    <div class="container-contactenos">
+        <div class="image">
+            <img src="images/contactenos.jpg" alt="contactenos">            
+        </div>
+        <div class="form">
+            <form action="/contactenos" method="post">
+              <span>Nombre:</span><br>
+              <input type="hidden" name="password" value="1">
+              <input type="text" name="name" required>
+              <br>
+               <span>Telefono:</span><br>
+              <input type="number" name="numContact" required>
+              <br>
+              <span>Correo:</span><br>
+              <input type="email" name="email" required>
+              <br>
+              <span>Mensaje:</span><br>
+              <textarea  name="menssage"></textarea>
+              <br>
+              <input class="submit" type="submit" value="Enviar">
+            </form>              
+        </div>
+    </div>
+

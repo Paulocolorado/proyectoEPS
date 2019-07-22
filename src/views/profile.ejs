@@ -88,7 +88,7 @@
     <%}%>
 <!--Fin Doctor-->
 
-<!--Paciente-->
+<!--Paciente Humano-->
     <% if (user.local.userPatiente) {%>
         <h1>userPatiente</h1>
   
@@ -118,7 +118,38 @@
 
     <%}%>
 
-<!--Paciente-->    
+<!--Paciente Humano--> 
+<!--Paciente Dios-->
+<% if (user.local.god) {%>
+    <h1>Paciente Dios</h1>
+
+
+<h1>Clinical history</h1>
+<p><a href="/clinicalHist">Clinical history</a></p>
+<p>
+
+<h1>Dios</h1>
+<p><a href="/logout">Logout</a></p>
+<p>
+    <strong>id</strong>: <%= user._id %> <br>
+    <strong>email</strong>: <%= user.local.email %><br>
+    <strong>password</strong>: <%= user.local.password %><br>
+    <strong>LastName</strong>: <%= user.local.lastName %><br>
+    <strong>userAdmin</strong>: <%= user.local.userAdmin %><br>
+    <strong>LastName</strong>: <%= user.local.userAdmin %>
+</p>
+<div>
+    <p>
+        <a href="/clinicalHist">Historia Clinica</a>
+    </p>
+</div>
+
+</div>
+
+
+<%}%>
+
+<!--Paciente Dios-->     
 
 </body>
 </html>

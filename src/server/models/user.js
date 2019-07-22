@@ -26,6 +26,8 @@ const userSchema = new mongoose.Schema({
         generalExam: String,
         humanHeight: String,
         laboratoryResults: String,
+        god: Boolean,
+        menssage: String,
     },
 
 });

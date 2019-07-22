@@ -29,6 +29,20 @@ module.exports = (app, passport) => {
         failureFlash: true
     }));
 
+    app.get('/contactenos', (req, res) => {
+        res.render('contactenos', {
+            message: req.flash('signupMessage'),
+            user: new User(req.user)
+        });
+    });
+
+    app.post('/contactenos',  passport.authenticate('local-newClinicalHist',{
+        successRedirect: '/',
+        failureRedirect: '/',
+        failureFlash: true
+    }));
+    
+
     app.get('/listUser',  (req, res) => {
         User.find().exec(function(err, usuarios) {
             if (err) throw err;
@@ -58,8 +72,8 @@ module.exports = (app, passport) => {
     });
 
     app.put('/editUser/:id', async(req, res) =>{
-        const { name, idNumber, userDoctor , userPatiente, email, password, lastName, numContact, birthDate, address, sex, consulMotivation, status, vitalSign, pulse, presion, generalExam, humanHeight, laboratoryResults }=req.body;
-        await User.findByIdAndUpdate(req.params.id,{local:{name, idNumber, userDoctor , userPatiente, email, password, lastName, numContact, birthDate, address, sex, consulMotivation, status, vitalSign, pulse, presion, generalExam, humanHeight, laboratoryResults }});
+        const { name, idNumber, userDoctor , userPatiente, email, password, lastName, numContact, birthDate, address, sex, consulMotivation, status, vitalSign, pulse, presion, generalExam, humanHeight, laboratoryResults, god }=req.body;
+        await User.findByIdAndUpdate(req.params.id,{local:{name, idNumber, userDoctor , userPatiente, email, password, lastName, numContact, birthDate, address, sex, consulMotivation, status, vitalSign, pulse, presion, generalExam, humanHeight, laboratoryResults, god }});
         res.redirect('/listUser');
     })
 

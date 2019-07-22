@@ -55,6 +55,8 @@ module.exports = function (passport) {
                     newUser.local.generalExam = req.body.generalExam;
                     newUser.local.humanHeight = req.body.humanHeight;
                     newUser.local.laboratoryResults = req.body.laboratoryResults;
+                    newUser.local.god = req.body.god;
+                    newUser.local.menssage = req.body.menssage;
                     newUser.save(function (err) {
                         if (err) {
                             throw err;
@@ -102,6 +104,8 @@ module.exports = function (passport) {
                     newUser.local.generalExam = req.body.generalExam;
                     newUser.local.humanHeight = req.body.humanHeight;
                     newUser.local.laboratoryResults = req.body.laboratoryResults;
+                    newUser.local.god = req.body.god;
+                    newUser.local.menssage = req.body.menssage;
                     newUser.save(function (err) {
                         if (err) {
                             throw err;
