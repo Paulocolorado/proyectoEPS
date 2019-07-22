@@ -69,17 +69,18 @@ module.exports = function (passport) {
 
         passport.use('local-newClinicalHist', new LocalStrategy({
             // by default, local strategy uses username and password, we will override with email
-            usernameField: 'email',
+            usernameField: 'idNumber',
             passwordField: 'password',
             passReqToCallback: true // allows us to pass back the entire request to the callback
         },
-        function (req, email, password, done) {
-            User.findOne({'local.email': email}, function (err, user) {
+        function (req, idNumber, password, done) {
+            User.findOne({'local.idNumber': idNumber}, function (err, user) {
                 if (err) {
-                    return done(err);
+                    // return done(err),
+                    return done(err, false, req.flash('newClinicalMessage', 'El Id ya existe'));
                 }
                 if (user) {
-                    return done(null, false, req.flash('signupMessage', 'the email is already taken'));
+                    return done(null, false, req.flash('newClinicalMessage', 'El Id ya existe'));
                 } else {
                     var newUser = new User();
                     newUser.local.userDoctor = req.body.userDoctor;

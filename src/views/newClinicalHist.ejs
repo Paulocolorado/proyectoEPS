@@ -7,7 +7,16 @@
         
             </head>
             <body class="newClinicalHist">
+
                <div>
+                    <% if(message.length > 0) { %>
+                        <div>
+                            <%= message %>
+                            <script>
+                            alert("El id ya existe!");
+                            </script>
+                        </div>
+                       <% }  %>
                    <h1>
                         Nueva historia Clinica
                    </h1>

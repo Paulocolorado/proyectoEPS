@@ -3,7 +3,7 @@ module.exports = (app, passport) => {
     const User = require('../server/models/user');
 
         // historia clinica
-    app.get('/clinicalHist', (req, res) => {
+    app.get('/clinicalHist',isLoggedIn,  (req, res) => {
         res.render('clinicalHist', {
             user: req.user
         });
@@ -16,19 +16,20 @@ module.exports = (app, passport) => {
     }));
 
             // Nueva historia clinica
-    app.get('/newClinicalHist', (req, res) => { 
+    app.get('/newClinicalHist', isLoggedIn, (req, res) => { 
         res.render('newClinicalHist', {
-            message: req.flash('loginMessage'),
+            message: req.flash('newClinicalMessage'),
             user: new User(req.user)
         });
     });
   
     app.post('/newClinicalHist', passport.authenticate('local-newClinicalHist', {
-        successRedirect: '/newClinicalHist',
-        failureRedirect: '/profile/',
+        successRedirect: '/profile',
+        failureRedirect: '/newClinicalHist/',
         failureFlash: true
     }));
 
+             // Contactenos
     app.get('/contactenos', (req, res) => {
         res.render('contactenos', {
             message: req.flash('signupMessage'),
@@ -42,8 +43,8 @@ module.exports = (app, passport) => {
         failureFlash: true
     }));
     
-
-    app.get('/listUser',  (req, res) => {
+         // listar usuario
+    app.get('/listUser',  isLoggedIn, (req, res) => {
         User.find().exec(function(err, usuarios) {
             if (err) throw err;
             myvariable = JSON.parse(JSON.stringify(usuarios));
@@ -51,7 +52,8 @@ module.exports = (app, passport) => {
         res.render('listUser')
     });
 
-    app.get('/listPatiente',  (req, res) => {
+             // Listar Paciente
+    app.get('/listPatiente',  isLoggedIn, (req, res) => {
         User.find().exec(function(err, usuarios) {
             if (err) throw err;
             myvariable = JSON.parse(JSON.stringify(usuarios));
@@ -59,25 +61,28 @@ module.exports = (app, passport) => {
         res.render('listPatiente')
     });
 
-    app.get('/delete/:id', async (req, res, next) => {
+            // Eliminar
+    app.get('/delete/:id', isLoggedIn, async (req, res, next) => {
         let { id } = req.params;
         await User.deleteOne({_id: id});
         res.redirect('/profile');
       });
 
-    app.get('/edit/:id', async(req, res) => {
+            // Editar usuario
+    app.get('/edit/:id',isLoggedIn,  async(req, res) => {
         const note = await User.findById(req.params.id);
         res.render('editUser', {note});
         console.log(note);
     });
 
-    app.put('/editUser/:id', async(req, res) =>{
+    app.put('/editUser/:id',isLoggedIn,  async(req, res) =>{
         const { name, idNumber, userDoctor , userPatiente, email, password, lastName, numContact, birthDate, address, sex, consulMotivation, status, vitalSign, pulse, presion, generalExam, humanHeight, laboratoryResults, god }=req.body;
         await User.findByIdAndUpdate(req.params.id,{local:{name, idNumber, userDoctor , userPatiente, email, password, lastName, numContact, birthDate, address, sex, consulMotivation, status, vitalSign, pulse, presion, generalExam, humanHeight, laboratoryResults, god }});
         res.redirect('/listUser');
     })
 
-    app.get('/editPatiente/:id', async(req, res) => {
+            // Editar paciente
+    app.get('/editPatiente/:id', isLoggedIn,  async(req, res) => {
         const note = await User.findById(req.params.id);
         res.render('editPatiente', {note});
         console.log(note);
@@ -89,10 +94,12 @@ module.exports = (app, passport) => {
         res.redirect('/listPatiente');
     })
 
+            // Página inicio
     app.get('/', (req, res) => {
         res.render('index')
     });
 
+            // login
     app.get('/login', (req, res) => {
         res.render('login', {
             message: req.flash('loginMessage')
@@ -105,6 +112,7 @@ module.exports = (app, passport) => {
         failureFlash: true
     }));
 
+            // Crear usuario Admin
     app.get('/signup', (req, res) => {
         res.render('signup', {
             message: req.flash('signupMessage')
@@ -113,7 +121,7 @@ module.exports = (app, passport) => {
 
     app.post('/signup', passport.authenticate('local-signup', {
 		successRedirect: '/profile',
-		failureRedirect: '/signup',
+		failureRedirect: '/newClinicalHist',
 		failureFlash: true // allow flash messages
 	}));
 
@@ -123,6 +131,7 @@ module.exports = (app, passport) => {
             myvariable = JSON.parse(JSON.stringify(usuarios));
         });
         res.render('profile', {
+            message: req.flash('newClinicalMessage'),
             user: req.user
         });
     });
